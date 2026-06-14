@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "stack-foundation",
+  "repo": "stack-foundation-module",
+  "runtimeId": "stack-foundation",
+  "lifecycle": "active",
+  "dependencies": [],
+  "overlays": [
+    "global.settings",
+    "stack.config/agent-docs",
+    "stack.config/components.json",
+    "stack.config/demo-content-contract.json",
+    "stack.config/portal-profiles.json",
+    "stack.config/pos-exploration.json",
+    "stack.config/service-contracts.json",
+    "stack.config/stack-knowledge",
+    "stack.config/system",
+    "stack.config/templates",
+    "stack.config/theme-contract.json",
+    "stack.config/vectors",
+    "stack.systemd/graph.json"
+  ]
+}
