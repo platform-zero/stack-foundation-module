@@ -5,6 +5,12 @@
   "runtimeId": "stack-foundation",
   "lifecycle": "active",
   "dependencies": [],
+  "runtimeDependencies": [],
+  "contracts": [
+    "module-contract"
+  ],
+  "smoke": "unsupported",
+  "smokeUnsupportedReason": "foundation-only module contributes shared metadata and no runnable service",
   "overlays": [
     "global.settings/networks.yml",
     "global.settings/volume-init.yml",
@@ -16,5 +22,6 @@
     "stack.config/templates",
     "stack.config/theme-contract.json",
     "stack.config/vectors"
-  ]
+  ],
+  "testAssets": []
 }
