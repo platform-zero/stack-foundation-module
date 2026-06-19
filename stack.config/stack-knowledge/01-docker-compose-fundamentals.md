@@ -216,14 +216,14 @@ services:
 ```yaml
 services:
   web:
-    image: nginx:latest
+    image: nginx:1.27-alpine
     depends_on:
       - app
     networks:
       - frontend
 
   app:
-    image: myapp:latest
+    image: ghcr.io/example/myapp:1.0.0
     depends_on:
       - db
     networks:

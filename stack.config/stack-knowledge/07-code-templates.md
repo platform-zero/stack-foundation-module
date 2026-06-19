@@ -6,7 +6,7 @@
 ```yaml
 services:
   web-app:
-    image: nginx:latest
+    image: nginx:1.27-alpine
     container_name: my-web-app
     restart: unless-stopped
     networks:
@@ -57,7 +57,7 @@ volumes:
 ```yaml
 services:
   app:
-    image: myapp:latest
+    image: ghcr.io/example/myapp:1.0.0
     container_name: my-app
     restart: unless-stopped
     depends_on:

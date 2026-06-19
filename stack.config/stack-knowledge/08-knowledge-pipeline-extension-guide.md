@@ -265,7 +265,6 @@ Use the workspace proxy and helper commands when available. Do not log stack tok
 Minimum local tests before committing:
 
 ```bash
-./stack.containers/test-runner/run-tests.sh ts-unit
 ./gradlew :pipeline-common:test :knowledge-ingestion:test :content-publisher:test :search-service:test
 ```
 
