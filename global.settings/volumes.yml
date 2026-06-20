@@ -90,6 +90,12 @@ volumes:
       type: bind
       o: bind
       device: ${STACK_VOLUME_ROOT}/postgres_data
+  postgres_ssd_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${PG_SSD_ROOT}/postgres-ssd
   prometheus_data:
     driver: local
     driver_opts:

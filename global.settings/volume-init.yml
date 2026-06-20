@@ -10,8 +10,6 @@ services:
         mkdir -p /mnt/vector_root/qdrant
         mkdir -p /mnt/vector_root/opensearch
         mkdir -p /mnt/pg-ssd-root/postgres-ssd
-        mkdir -p ${NOCOW_DB_DIR}/postgres
-        mkdir -p ${NOCOW_DB_DIR}/mariadb
         mkdir -p ${STACK_VOLUME_ROOT}
         for name in \
           alertmanager_data bookstack_data element_data forgejo_data grafana_data loki_data kopia_data \
@@ -30,9 +28,6 @@ services:
         chmod 755 /mnt/vector_root/qdrant
         chmod 755 /mnt/vector_root/opensearch
         chmod 755 /mnt/pg-ssd-root/postgres-ssd
-        chmod 755 ${NOCOW_DB_DIR}
-        chmod 755 ${NOCOW_DB_DIR}/postgres
-        chmod 755 ${NOCOW_DB_DIR}/mariadb
         chmod 755 ${STACK_VOLUME_ROOT}
         chmod 755 ${QBITTORRENT_DATA_ROOT}
         chmod 755 ${SEAFILE_MEDIA_ROOT}
@@ -46,4 +41,3 @@ services:
       - ${QBITTORRENT_DATA_ROOT}:${QBITTORRENT_DATA_ROOT}:rw
       - ${SEAFILE_MEDIA_ROOT}:${SEAFILE_MEDIA_ROOT}:rw
       - ${JELLYFIN_MEDIA_ROOT}:${JELLYFIN_MEDIA_ROOT}:rw
-      - ${NOCOW_DB_DIR}:${NOCOW_DB_DIR}:rw
