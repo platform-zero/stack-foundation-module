@@ -1,43 +1,229 @@
 volumes:
 
   alertmanager_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/alertmanager_data
   bookstack_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/bookstack_data
   element_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/element_data
   forgejo_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/forgejo_data
   grafana_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/grafana_data
   loki_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/loki_data
   kopia_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/kopia_data
   mailserver_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/mailserver_data
   mariadb_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/mariadb_data
   onlyoffice_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/onlyoffice_data
   onboarding_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/onboarding_data
   open_webui_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/open_webui_data
   planka_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/planka_data
   planka_caddy_ca:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/planka_caddy_ca
   postgres_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/postgres_data
   prometheus_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/prometheus_data
   redis_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/redis_data
   vaultwarden_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/vaultwarden_data
   vaultwarden_caddy_ca:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/vaultwarden_caddy_ca
   jupyterhub_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/jupyterhub_data
   homeassistant_config:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/homeassistant_config
   homeassistant_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/homeassistant_data
   synapse_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/synapse_data
   ntfy_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/ntfy_data
   couchdb_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/couchdb_data
   registry_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/registry_data
   isolated_registry_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/isolated_registry_data
   forgejo_runner_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/forgejo_runner_data
   forgejo_runner_token:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/forgejo_runner_token
   pipeline_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/pipeline_data
   airflow_logs:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/airflow_logs
   nats_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/nats_data
 
   caddy_config:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/caddy_config
   caddy_certs:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/caddy_certs
   caddy_ca:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/caddy_ca
+  qbittorrent_config:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/qbittorrent_config
 
   caddy_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/caddy_data
 
   seafile_files:
     driver: local
@@ -60,6 +246,13 @@ volumes:
       o: bind
       device: ${VECTOR_DB_ROOT}/opensearch
 
+  qbittorrent_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${QBITTORRENT_DATA_ROOT}
+
   jellyfin_media:
     driver: local
     driver_opts:
@@ -68,5 +261,20 @@ volumes:
       device: ${JELLYFIN_MEDIA_ROOT}
 
   datafetcher_data:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/datafetcher_data
   model_context_server_known_hosts:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/model_context_server_known_hosts
   model_context_server_scripts:
+    driver: local
+    driver_opts:
+      type: bind
+      o: bind
+      device: ${STACK_VOLUME_ROOT}/model_context_server_scripts
