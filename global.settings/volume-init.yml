@@ -9,7 +9,7 @@ services:
         echo "=== Volume Init: Creating bind mount directories ==="
         mkdir -p /mnt/vector_root/qdrant
         mkdir -p /mnt/vector_root/opensearch
-        mkdir -p /mnt/pg_ssd_root/postgres-ssd
+        mkdir -p /mnt/pg-ssd-root/postgres-ssd
         mkdir -p ${NOCOW_DB_DIR}/postgres
         mkdir -p ${NOCOW_DB_DIR}/mariadb
         mkdir -p ${STACK_VOLUME_ROOT}
@@ -29,7 +29,7 @@ services:
         echo "Setting permissions..."
         chmod 755 /mnt/vector_root/qdrant
         chmod 755 /mnt/vector_root/opensearch
-        chmod 755 /mnt/pg_ssd_root/postgres-ssd
+        chmod 755 /mnt/pg-ssd-root/postgres-ssd
         chmod 755 ${NOCOW_DB_DIR}
         chmod 755 ${NOCOW_DB_DIR}/postgres
         chmod 755 ${NOCOW_DB_DIR}/mariadb
@@ -41,7 +41,7 @@ services:
         echo "✓ Volume directories initialized successfully"
     volumes:
       - ${VECTOR_DB_ROOT}:/mnt/vector_root:rw
-      - ${PG_SSD_ROOT}:/mnt/pg_ssd_root:rw
+      - ${PG_SSD_ROOT}:/mnt/pg-ssd-root:rw
       - ${STACK_VOLUME_ROOT}:${STACK_VOLUME_ROOT}:rw
       - ${QBITTORRENT_DATA_ROOT}:${QBITTORRENT_DATA_ROOT}:rw
       - ${SEAFILE_MEDIA_ROOT}:${SEAFILE_MEDIA_ROOT}:rw
