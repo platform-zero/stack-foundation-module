@@ -176,8 +176,8 @@
       ]
     },
     "portal": {
-      "name": "Stack Portal",
-      "description": "Contract-driven portal for selected services, profile dashboards, and validation evidence.",
+      "name": "Homepage Dashboard",
+      "description": "gethomepage service dashboard for stack entry points.",
       "dependencies": [
         "core"
       ],
@@ -186,8 +186,8 @@
       ]
     },
     "homepage": {
-      "name": "Homepage compatibility redirect",
-      "description": "Compatibility alias that selects the canonical portal and redirects homepage.<domain> to portal.<domain>.",
+      "name": "Homepage alias",
+      "description": "Compatibility alias that redirects homepage.<domain> to portal.<domain>.",
       "dependencies": [
         "portal"
       ],
