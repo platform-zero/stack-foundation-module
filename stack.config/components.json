@@ -95,26 +95,6 @@
         "progression.yml"
       ]
     },
-    "chatgpt-connector": {
-      "name": "ChatGPT connector",
-      "description": "Model-context connector backed by search and workspace APIs.",
-      "dependencies": [
-        "workspace-provisioner"
-      ],
-      "composeFiles": [
-        "chatgpt-connector.yml"
-      ]
-    },
-    "workspace-provisioner": {
-      "name": "Workspace provisioner",
-      "description": "Authenticated disposable agent workspace controller.",
-      "dependencies": [
-        "search"
-      ],
-      "composeFiles": [
-        "workspace-provisioner.yml"
-      ]
-    },
     "donetick": {
       "name": "Donetick",
       "description": "Household task and routine tracking.",
@@ -346,7 +326,6 @@
       "description": "Convenience component for every platform-owned service.",
       "dependencies": [
         "apps",
-        "chatgpt-connector",
         "forgejo-runner",
         "observability",
         "pipeline",

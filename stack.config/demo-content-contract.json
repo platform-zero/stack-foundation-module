@@ -18,7 +18,6 @@
     "onlyoffice": ["document_edit", "spreadsheet_edit", "presentation_edit"],
     "grafana": ["stack_monitoring_dashboard", "economic_data_panel", "non_zero_data"],
     "jupyterhub": ["executed_notebook_output"],
-    "vaultwarden": ["diverse_secrets", "collection_view"],
-    "workspaces": ["create", "access_material", "file_write_read", "cleanup_expiry", "role_denial", "invalid_input"]
+    "vaultwarden": ["diverse_secrets", "collection_view"]
   }
 }
