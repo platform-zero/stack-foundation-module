@@ -32,15 +32,13 @@
       "composeFiles": [
         "alertmanager.yml",
         "alloy.yml",
-        "autoheal.yml",
         "cadvisor.yml",
         "docker-exporter.yml",
         "dozzle.yml",
         "grafana.yml",
         "loki.yml",
         "node-exporter.yml",
-        "prometheus.yml",
-        "watchtower.yml"
+        "prometheus.yml"
       ]
     },
     "inference": {
