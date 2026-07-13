@@ -80,16 +80,6 @@
         "bookstack.yml"
       ]
     },
-    "progression": {
-      "name": "Sovereign compute progression",
-      "description": "Evidence-backed dashboard and stackctl apprenticeship layer.",
-      "dependencies": [
-        "bookstack"
-      ],
-      "composeFiles": [
-        "progression.yml"
-      ]
-    },
     "donetick": {
       "name": "Donetick",
       "description": "Household task and routine tracking.",
@@ -323,8 +313,7 @@
         "apps",
         "forgejo-runner",
         "observability",
-        "pipeline",
-        "progression"
+        "pipeline"
       ],
       "composeFiles": []
     },
