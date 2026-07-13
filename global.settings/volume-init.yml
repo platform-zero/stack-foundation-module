@@ -29,6 +29,8 @@ services:
         chmod 755 /mnt/vector_root/opensearch
         chmod 755 /mnt/pg-ssd-root/postgres-ssd
         chmod 755 ${STACK_VOLUME_ROOT}
+        chown -R 10001:10001 ${STACK_VOLUME_ROOT}/jupyterhub_data
+        chmod 700 ${STACK_VOLUME_ROOT}/jupyterhub_data
         chmod 755 ${QBITTORRENT_DATA_ROOT}
         chmod 755 ${SEAFILE_MEDIA_ROOT}
         chown ${MEDIA_WRITER_UID}:${MEDIA_WRITER_GID} ${JELLYFIN_MEDIA_ROOT}

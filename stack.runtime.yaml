@@ -31,7 +31,8 @@ services:
       \ do\n  mkdir -p \"${STACK_VOLUME_ROOT}/$${name}\"\ndone\nmkdir -p ${QBITTORRENT_DATA_ROOT}\n\
       mkdir -p ${SEAFILE_MEDIA_ROOT}\nmkdir -p ${JELLYFIN_MEDIA_ROOT}\necho \"Setting\
       \ permissions...\"\nchmod 755 /mnt/vector_root/qdrant\nchmod 755 /mnt/vector_root/opensearch\n\
-      chmod 755 /mnt/pg-ssd-root/postgres-ssd\nchmod 755 ${STACK_VOLUME_ROOT}\nchmod\
+      chmod 755 /mnt/pg-ssd-root/postgres-ssd\nchmod 755 ${STACK_VOLUME_ROOT}\nchown\
+      \ -R 10001:10001 ${STACK_VOLUME_ROOT}/jupyterhub_data\nchmod 700 ${STACK_VOLUME_ROOT}/jupyterhub_data\nchmod\
       \ 755 ${QBITTORRENT_DATA_ROOT}\nchmod 755 ${SEAFILE_MEDIA_ROOT}\nchown ${MEDIA_WRITER_UID}:${MEDIA_WRITER_GID}\
       \ ${JELLYFIN_MEDIA_ROOT}\nchmod 775 ${JELLYFIN_MEDIA_ROOT}\necho \"✓ Volume\
       \ directories initialized successfully\"\n"
