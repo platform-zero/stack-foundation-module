@@ -6,11 +6,10 @@
   "components": {
     "core": {
       "name": "Core platform",
-      "description": "Edge, identity, shared databases, cache, Docker access proxies, and onboarding.",
+      "description": "Edge, identity, shared databases, cache, and onboarding.",
       "dependencies": [],
       "composeFiles": [
         "caddy.yml",
-        "docker-proxy.yml",
         "keycloak.yml",
         "keycloak-auth-gateway.yml",
         "mariadb.yml",
@@ -23,7 +22,7 @@
     },
     "observability": {
       "name": "Observability",
-      "description": "Metrics, logs, dashboards, health automation, and update monitoring.",
+      "description": "Metrics, logs, dashboards, security events, and host monitoring.",
       "dependencies": [
         "core",
         "crowdsec",
@@ -32,15 +31,11 @@
       "composeFiles": [
         "alertmanager.yml",
         "alloy.yml",
-        "autoheal.yml",
-        "cadvisor.yml",
-        "docker-exporter.yml",
-        "dozzle.yml",
         "grafana.yml",
         "loki.yml",
         "node-exporter.yml",
         "prometheus.yml",
-        "watchtower.yml"
+        "crowdsec.yml"
       ]
     },
     "inference": {
