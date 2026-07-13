@@ -1,0 +1,135 @@
+---
+schemaVersion: 1
+module: "stack-foundation"
+target: "core"
+services:
+  volume-init:
+    image: "alpine@sha256:310c62b5e7ca5b08167e4384c68db0fd2905dd9c7493756d356e893909057601"
+    containerName: "volume-init"
+    lifecycle: "oneshot"
+    updatePolicy: "pinned"
+    placement: "rootful"
+    volumes:
+    - "${VECTOR_DB_ROOT}:/mnt/vector_root:rw"
+    - "${PG_SSD_ROOT}:/mnt/pg-ssd-root:rw"
+    - "${STACK_VOLUME_ROOT}:${STACK_VOLUME_ROOT}:rw"
+    - "${QBITTORRENT_DATA_ROOT}:${QBITTORRENT_DATA_ROOT}:rw"
+    - "${SEAFILE_MEDIA_ROOT}:${SEAFILE_MEDIA_ROOT}:rw"
+    - "${JELLYFIN_MEDIA_ROOT}:${JELLYFIN_MEDIA_ROOT}:rw"
+    command:
+    - "echo \"=== Volume Init: Creating bind mount directories ===\"\nmkdir -p /mnt/vector_root/qdrant\n\
+      mkdir -p /mnt/vector_root/opensearch\nmkdir -p /mnt/pg-ssd-root/postgres-ssd\n\
+      mkdir -p ${STACK_VOLUME_ROOT}\nfor name in \\\n  alertmanager_data bookstack_data\
+      \ element_data forgejo_data grafana_data loki_data kopia_data \\\n  mailserver_data\
+      \ mariadb_data onlyoffice_data onboarding_data open_webui_data planka_data \\\
+      \n  planka_caddy_ca postgres_data prometheus_data redis_data vaultwarden_data\
+      \ vaultwarden_caddy_ca \\\n  jupyterhub_data homeassistant_config homeassistant_data\
+      \ synapse_data ntfy_data couchdb_data \\\n  registry_data isolated_registry_data\
+      \ forgejo_runner_data forgejo_runner_token pipeline_data \\\n  airflow_logs\
+      \ nats_data caddy_config caddy_certs caddy_ca qbittorrent_config caddy_data\
+      \ \\\n  datafetcher_data model_context_server_known_hosts model_context_server_scripts;\
+      \ do\n  mkdir -p \"${STACK_VOLUME_ROOT}/$${name}\"\ndone\nmkdir -p ${QBITTORRENT_DATA_ROOT}\n\
+      mkdir -p ${SEAFILE_MEDIA_ROOT}\nmkdir -p ${JELLYFIN_MEDIA_ROOT}\necho \"Setting\
+      \ permissions...\"\nchmod 755 /mnt/vector_root/qdrant\nchmod 755 /mnt/vector_root/opensearch\n\
+      chmod 755 /mnt/pg-ssd-root/postgres-ssd\nchmod 755 ${STACK_VOLUME_ROOT}\nchmod\
+      \ 755 ${QBITTORRENT_DATA_ROOT}\nchmod 755 ${SEAFILE_MEDIA_ROOT}\nchown ${MEDIA_WRITER_UID}:${MEDIA_WRITER_GID}\
+      \ ${JELLYFIN_MEDIA_ROOT}\nchmod 775 ${JELLYFIN_MEDIA_ROOT}\necho \"✓ Volume\
+      \ directories initialized successfully\"\n"
+    entrypoint:
+    - "/bin/sh"
+    - "-c"
+    restart: "no"
+networks:
+  default:
+    driver: "bridge"
+  internet:
+    driver: "bridge"
+  postgres:
+    driver: "bridge"
+    internal: true
+  mariadb:
+    driver: "bridge"
+    internal: true
+  qdrant:
+    driver: "bridge"
+    internal: true
+  opensearch:
+    driver: "bridge"
+    internal: true
+  pipeline:
+    driver: "bridge"
+    internal: true
+  valkey:
+    driver: "bridge"
+    internal: true
+  mailserver:
+    driver: "bridge"
+  memcached:
+    driver: "bridge"
+    internal: true
+  caddy:
+    driver: "bridge"
+  ai:
+    driver: "bridge"
+    internal: true
+  monitoring:
+    driver: "bridge"
+    internal: true
+  mastodon-internal:
+    driver: "bridge"
+    internal: true
+  matrix-internal:
+    driver: "bridge"
+    internal: true
+  erpnext-internal:
+    driver: "bridge"
+    internal: true
+  trading:
+    driver: "bridge"
+volumes:
+  alertmanager_data:
+    hostPath: "${STACK_VOLUME_ROOT}/alertmanager_data"
+  bookstack_data:
+    hostPath: "${STACK_VOLUME_ROOT}/bookstack_data"
+  caddy_ca:
+    hostPath: "${STACK_VOLUME_ROOT}/caddy_ca"
+  caddy_certs:
+    hostPath: "${STACK_VOLUME_ROOT}/caddy_certs"
+  caddy_config:
+    hostPath: "${STACK_VOLUME_ROOT}/caddy_config"
+  caddy_data:
+    hostPath: "${STACK_VOLUME_ROOT}/caddy_data"
+  element_data:
+    hostPath: "${STACK_VOLUME_ROOT}/element_data"
+  forgejo_data:
+    hostPath: "${STACK_VOLUME_ROOT}/forgejo_data"
+  forgejo_runner_token:
+    hostPath: "${STACK_VOLUME_ROOT}/forgejo_runner_token"
+  grafana_data:
+    hostPath: "${STACK_VOLUME_ROOT}/grafana_data"
+  homeassistant_data:
+    hostPath: "${STACK_VOLUME_ROOT}/homeassistant_data"
+  kopia_data:
+    hostPath: "${STACK_VOLUME_ROOT}/kopia_data"
+  loki_data:
+    hostPath: "${STACK_VOLUME_ROOT}/loki_data"
+  mailserver_data:
+    hostPath: "${STACK_VOLUME_ROOT}/mailserver_data"
+  mariadb_data:
+    hostPath: "${STACK_VOLUME_ROOT}/mariadb_data"
+  ntfy_data:
+    hostPath: "${STACK_VOLUME_ROOT}/ntfy_data"
+  onboarding_data:
+    hostPath: "${STACK_VOLUME_ROOT}/onboarding_data"
+  postgres_data:
+    hostPath: "${STACK_VOLUME_ROOT}/postgres_data"
+  prometheus_data:
+    hostPath: "${STACK_VOLUME_ROOT}/prometheus_data"
+  qbittorrent_config:
+    hostPath: "${STACK_VOLUME_ROOT}/qbittorrent_config"
+  redis_data:
+    hostPath: "${STACK_VOLUME_ROOT}/redis_data"
+  synapse_data:
+    hostPath: "${STACK_VOLUME_ROOT}/synapse_data"
+  vaultwarden_data:
+    hostPath: "${STACK_VOLUME_ROOT}/vaultwarden_data"
