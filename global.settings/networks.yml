@@ -34,14 +34,6 @@ networks:
     driver: bridge
     internal: true
 
-  docker-proxy:
-    driver: bridge
-    internal: true
-
-  docker-controller:
-    driver: bridge
-    internal: true
-
   caddy:
     driver: bridge
 
