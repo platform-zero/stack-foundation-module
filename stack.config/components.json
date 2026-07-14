@@ -8,7 +8,7 @@
       "name": "Core platform",
       "description": "Edge, identity, shared databases, cache, and onboarding.",
       "dependencies": [],
-      "composeFiles": [
+      "runtimeFiles": [
         "caddy.yml",
         "keycloak.yml",
         "keycloak-auth-gateway.yml",
@@ -28,7 +28,7 @@
         "crowdsec",
         "ntfy"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "alertmanager.yml",
         "alloy.yml",
         "grafana.yml",
@@ -44,7 +44,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "embedding.yml",
         "qdrant.yml"
       ]
@@ -55,7 +55,7 @@
       "dependencies": [
         "inference"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "opensearch.yml"
       ]
     },
@@ -66,7 +66,7 @@
         "search",
         "bookstack"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "pipeline.yml"
       ]
     },
@@ -76,7 +76,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "bookstack.yml"
       ]
     },
@@ -86,7 +86,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "donetick.yml"
       ]
     },
@@ -96,7 +96,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "crowdsec.yml"
       ]
     },
@@ -106,7 +106,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "erpnext.yml"
       ]
     },
@@ -116,7 +116,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "forgejo.yml"
       ]
     },
@@ -126,7 +126,7 @@
       "dependencies": [
         "forgejo"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "forgejo-runner.yml"
       ]
     },
@@ -136,7 +136,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "homeassistant.yml"
       ]
     },
@@ -146,7 +146,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "portal.yml"
       ]
     },
@@ -156,7 +156,7 @@
       "dependencies": [
         "portal"
       ],
-      "composeFiles": []
+      "runtimeFiles": []
     },
     "jellyfin": {
       "name": "Jellyfin",
@@ -164,7 +164,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "jellyfin.yml"
       ]
     },
@@ -174,7 +174,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "jupyter-notebook.yml",
         "jupyterhub.yml"
       ]
@@ -185,7 +185,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "kopia.yml"
       ]
     },
@@ -195,7 +195,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "mailserver.yml"
       ]
     },
@@ -205,7 +205,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "element.yml",
         "livekit.yml",
         "matrix-authentication-service.yml",
@@ -218,7 +218,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "mastodon.yml"
       ]
     },
@@ -228,7 +228,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "ntfy.yml"
       ]
     },
@@ -238,7 +238,7 @@
       "dependencies": [
         "seafile"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "onlyoffice.yml"
       ]
     },
@@ -248,7 +248,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "planka.yml"
       ]
     },
@@ -258,7 +258,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "seafile.yml"
       ]
     },
@@ -268,7 +268,7 @@
       "dependencies": [
         "mailserver"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "sogo.yml"
       ]
     },
@@ -278,7 +278,7 @@
       "dependencies": [
         "mailserver"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "vaultwarden.yml"
       ]
     },
@@ -304,7 +304,7 @@
         "sogo",
         "vaultwarden"
       ],
-      "composeFiles": []
+      "runtimeFiles": []
     },
     "full": {
       "name": "Full platform",
@@ -315,7 +315,7 @@
         "observability",
         "pipeline"
       ],
-      "composeFiles": []
+      "runtimeFiles": []
     },
     "huly": {
       "name": "Huly",
@@ -323,7 +323,7 @@
       "dependencies": [
         "core"
       ],
-      "composeFiles": [
+      "runtimeFiles": [
         "huly.yml"
       ]
     }
