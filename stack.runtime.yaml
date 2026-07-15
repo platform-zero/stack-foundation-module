@@ -106,6 +106,7 @@ volumes:
     hostPath: "${STACK_VOLUME_ROOT}/forgejo_data"
   forgejo_runner_token:
     hostPath: "${STACK_VOLUME_ROOT}/forgejo_runner_token"
+    rootlessStrategy: "shared"
   grafana_data:
     hostPath: "${STACK_VOLUME_ROOT}/grafana_data"
   homeassistant_data:
