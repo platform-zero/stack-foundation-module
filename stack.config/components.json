@@ -122,7 +122,7 @@
     },
     "forgejo-runner": {
       "name": "Forgejo runner",
-      "description": "Forgejo Actions runner with isolated Docker access.",
+      "description": "Forgejo Actions runner with isolated rootless Podman access.",
       "dependencies": [
         "forgejo"
       ],

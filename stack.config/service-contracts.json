@@ -3,7 +3,7 @@
   "components": {
     "core": {
       "name": "Core Platform",
-      "description": "Edge, identity, shared databases, cache, Docker proxying, and onboarding.",
+      "description": "Edge, identity, shared databases, cache, Podman runtime isolation, and onboarding.",
       "moduleType": "foundation",
       "primaryHost": "keycloak",
       "routes": [
@@ -851,7 +851,7 @@
     },
     "forgejo-runner": {
       "name": "Forgejo Runner",
-      "description": "Forgejo Actions runner with isolated Docker access.",
+      "description": "Forgejo Actions runner with isolated rootless Podman access.",
       "moduleType": "capability",
       "primaryHost": "forgejo",
       "routes": [],
