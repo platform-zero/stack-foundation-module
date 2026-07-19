@@ -92,6 +92,7 @@ volumes:
     hostPath: "${STACK_VOLUME_ROOT}/alertmanager_data"
   backup_staging:
     hostPath: "${STACK_VOLUME_ROOT}/backup_staging"
+    rootlessStrategy: "shared"
   bookstack_data:
     hostPath: "${STACK_VOLUME_ROOT}/bookstack_data"
   caddy_ca:
@@ -115,7 +116,6 @@ volumes:
     hostPath: "${STACK_VOLUME_ROOT}/homeassistant_data"
   kopia_data:
     hostPath: "${STACK_VOLUME_ROOT}/kopia_data"
-    rootlessStrategy: "shared"
   loki_data:
     hostPath: "${STACK_VOLUME_ROOT}/loki_data"
   mailserver_data:
@@ -126,17 +126,6 @@ volumes:
     hostPath: "${STACK_VOLUME_ROOT}/ntfy_data"
   node_exporter_textfile:
     hostPath: "${STACK_VOLUME_ROOT}/node_exporter_textfile"
-  rootless_stack_backup_source:
-    hostPath: "/mnt/stack/rootless/volumes"
-    rootlessStrategy: "shared"
-  rootless_vector_backup_source:
-    hostPath: "/mnt/stack/rootless/vector-dbs"
-    rootlessStrategy: "shared"
-  rootless_pg_backup_source:
-    hostPath: "/mnt/stack/rootless/pg-ssd"
-    rootlessStrategy: "shared"
-  seafile_backup_source:
-    hostPath: "${SEAFILE_MEDIA_ROOT}"
     rootlessStrategy: "shared"
   onboarding_data:
     hostPath: "${STACK_VOLUME_ROOT}/onboarding_data"
