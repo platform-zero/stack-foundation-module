@@ -90,6 +90,8 @@ networks:
 volumes:
   alertmanager_data:
     hostPath: "${STACK_VOLUME_ROOT}/alertmanager_data"
+  backup_staging:
+    hostPath: "${STACK_VOLUME_ROOT}/backup_staging"
   bookstack_data:
     hostPath: "${STACK_VOLUME_ROOT}/bookstack_data"
   caddy_ca:
@@ -121,6 +123,8 @@ volumes:
     hostPath: "${STACK_VOLUME_ROOT}/mariadb_data"
   ntfy_data:
     hostPath: "${STACK_VOLUME_ROOT}/ntfy_data"
+  node_exporter_textfile:
+    hostPath: "${STACK_VOLUME_ROOT}/node_exporter_textfile"
   onboarding_data:
     hostPath: "${STACK_VOLUME_ROOT}/onboarding_data"
   postgres_data:

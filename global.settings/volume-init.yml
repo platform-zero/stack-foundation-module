@@ -24,6 +24,7 @@ services:
         mkdir -p ${QBITTORRENT_DATA_ROOT}
         mkdir -p ${SEAFILE_MEDIA_ROOT}
         mkdir -p ${JELLYFIN_MEDIA_ROOT}
+        mkdir -p ${STACK_VOLUME_ROOT}/backup_staging ${STACK_VOLUME_ROOT}/node_exporter_textfile
         echo "Setting permissions..."
         chmod 755 /mnt/vector_root/qdrant
         chmod 755 /mnt/vector_root/opensearch
