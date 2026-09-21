@@ -943,7 +943,8 @@
       "rbac": {
         "groups": [
           "admins",
-          "operators"
+          "operators",
+          "users"
         ]
       },
       "state": {
