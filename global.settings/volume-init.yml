@@ -13,7 +13,7 @@ services:
         mkdir -p ${STACK_VOLUME_ROOT}
         for name in \
           alertmanager_data bookstack_data element_data forgejo_data grafana_data loki_data kopia_data \
-          mailserver_data mariadb_data onlyoffice_data onboarding_data open_webui_data planka_data \
+          mailserver_data mailserver_rspamd mariadb_data onlyoffice_data onboarding_data open_webui_data planka_data \
           planka_caddy_ca postgres_data prometheus_data redis_data vaultwarden_data vaultwarden_caddy_ca \
           jupyterhub_data homeassistant_config homeassistant_data synapse_data ntfy_data couchdb_data \
           registry_data isolated_registry_data forgejo_runner_data forgejo_runner_token pipeline_data \
