@@ -931,7 +931,7 @@
           "rbacEnforcement": "edge_group_allow"
         },
         {
-          "host": "api.homeassistant",
+          "host": "home-native",
           "auth": "native_token",
           "ui": false,
           "rbacEnforcement": "non_browser_token"
@@ -1663,7 +1663,7 @@
           "rbacEnforcement": "native_group_mapping"
         },
         {
-          "host": "api.mastodon",
+          "host": "mastodon",
           "auth": "oauth",
           "ui": false,
           "rbacEnforcement": "non_browser_token"
@@ -2059,7 +2059,7 @@
           "rbacEnforcement": "edge_group_allow"
         },
         {
-          "host": "api.seafile",
+          "host": "files-native",
           "auth": "api_token",
           "ui": false,
           "rbacEnforcement": "non_browser_token"
@@ -2237,7 +2237,7 @@
           "rbacEnforcement": "native_group_mapping"
         },
         {
-          "host": "api.vaultwarden",
+          "host": "vaultwarden",
           "auth": "native_token",
           "ui": false,
           "rbacEnforcement": "non_browser_token"
