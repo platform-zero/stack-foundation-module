@@ -20,7 +20,7 @@ services:
     - "echo \"=== Volume Init: Creating bind mount directories ===\"\nmkdir -p /mnt/vector_root/qdrant\n\
       mkdir -p /mnt/vector_root/opensearch\nmkdir -p /mnt/pg-ssd-root/postgres-ssd\n\
       mkdir -p ${STACK_VOLUME_ROOT}\nfor name in \\\n  alertmanager_data bookstack_data\
-      \ element_data forgejo_data grafana_data loki_data kopia_data \\\n  mailserver_data mailserver_rspamd\
+      \ element_data forgejo_data grafana_data loki_data kopia_data \\\n  mailserver_data mailserver_config mailserver_rspamd\
       \ mariadb_data onlyoffice_data onboarding_data open_webui_data planka_data \\\
       \n  planka_caddy_ca postgres_data prometheus_data redis_data vaultwarden_data\
       \ vaultwarden_caddy_ca \\\n  jupyterhub_data homeassistant_config homeassistant_data\
@@ -117,6 +117,8 @@ volumes:
     hostPath: "${STACK_VOLUME_ROOT}/loki_data"
   mailserver_data:
     hostPath: "${STACK_VOLUME_ROOT}/mailserver_data"
+  mailserver_config:
+    hostPath: "${STACK_VOLUME_ROOT}/mailserver_config"
   mailserver_rspamd:
     hostPath: "${STACK_VOLUME_ROOT}/mailserver_rspamd"
   mariadb_data:
